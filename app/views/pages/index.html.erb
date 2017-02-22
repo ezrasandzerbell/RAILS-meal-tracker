@@ -13,6 +13,7 @@
   <h3>Your Weight: <%= @user.weight %></h3>
   <h3>Your Calorie Allowance: <%= @user.cal_rem %> / <%= @user.calorie_allowance %></h3>
   <h3>Total Calories Gained: <%= @total_cal_gained %></h3>
+  <h3>Total Calories Burned: <%= @total_cal_burned %></h3>
 
   <%= link_to "Log your Meal", new_user_meal_path(@user) %>
   <br>

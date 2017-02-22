@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def index
     @user = current_user
     @total_cal_gained = Meal.total_cal_gained(@user.id)
+    @total_cal_burned = Workout.total_cal_burned(@user.id)
   end
 
 end
