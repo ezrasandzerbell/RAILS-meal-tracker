@@ -1,0 +1,5 @@
+<h1>Meals You've Logged</h1>
+
+<% @meals.each do |meal| %>
+  <p><%= meal.cal_gained %> with <%= meal.servings %> servings</p>
+<% end %>
