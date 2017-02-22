@@ -4,7 +4,7 @@
   <h3>Enter your user details </h3>
   <%= form_for @user do |f| %>
   <%= f.label :weight %>
-  <%= f.number_field :weight, :step => 0.5 %>
+  <%= f.number_field :weight, :step => 0.1 %>
   <%= f.label :calorie_allowance %>
   <%= f.number_field :calorie_allowance %>
   <%= f.submit %>
@@ -12,6 +12,10 @@
 <% elsif @user && @user.calorie_allowance && @user.weight %>
   <h3>Your Weight: <%= @user.weight %></h3>
   <h3>Your Calorie Allowance: <%= @user.calorie_allowance %></h3>
+
+  <%= link_to "Log your Meal", new_user_meal_path(@user) %>
+  <br>
+  <%= link_to "Log your Workout", new_user_workout_path(@user) %>
 <% else %>
   <h3>Please Log In</h3>
 <% end %>

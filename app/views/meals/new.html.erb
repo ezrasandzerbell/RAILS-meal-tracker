@@ -1,0 +1,15 @@
+<%= form_for [@user, @meal] do |f| %>
+<%= f.label :servings %>
+<%= f.number_field :servings %>
+<%= f.label :cal_gained %>
+<%= f.number_field :cal_gained %>
+<%= f.select(:food_id, @foods.map { |value| [ value.name, value.cal_serving ] })%>
+<%= f.submit %>
+<% end %>
+
+<hr>
+
+<h3>Try searching for these foods:</h3>
+<% @foods.each do |food| %>
+  <p><%= food.name %>, <%= food.cal_serving %> calories</p>
+<% end %>
