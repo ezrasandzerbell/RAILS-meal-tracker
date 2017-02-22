@@ -8,4 +8,15 @@ class Meal < ActiveRecord::Base
     current_servings = self.servings
     current_food_cal * current_servings
   end
+
+  def self.total_cal_gained(user_id)
+    user = User.find(user_id)
+    meals = user.meals
+    totalMeal = 0
+    meals.each do |meal|
+      totalMeal += meal.cal_gained
+    end
+    return totalMeal
+  end
+
 end
