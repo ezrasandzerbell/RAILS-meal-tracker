@@ -17,7 +17,12 @@ class MealsController < ApplicationController
     if @meal.save
       @user.cal_rem = @user.cal_rem - @meal.cal_gained
       @user.save
-      redirect_to user_meals_path
+      @total_cal_gained = Meal.total_cal_gained(@user.id)
+      flash[:notice] = "Meal successfully added!"
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
     else
       render :new
     end

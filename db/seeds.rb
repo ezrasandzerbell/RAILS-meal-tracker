@@ -28,9 +28,7 @@ exercise_list = [
   ["Aerobics", 5],
   ["Stretching", 5],
   ["Calisthenics",	5],
-  ["Aerobics", 7],
   ["Stairs", 7],
-  ["Teaching", 7],
   ["Lifting", 7],
   ["Bicycling", 9],
   ["Rowing", 9]

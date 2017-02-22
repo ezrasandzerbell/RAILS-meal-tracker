@@ -17,7 +17,12 @@ class WorkoutsController < ApplicationController
     if @workout.save
       @user.cal_rem = @user.cal_rem + @workout.cal_burned
       @user.save
-      redirect_to user_workouts_path
+      @total_cal_burned = Workout.total_cal_burned(@user.id)
+      flash[:notice] = "Workout successfully added!"
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
     else
       render :new
     end

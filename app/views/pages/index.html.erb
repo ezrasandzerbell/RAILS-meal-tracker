@@ -12,12 +12,34 @@
 <% elsif @user && @user.calorie_allowance && @user.weight %>
   <h3>Your Weight: <%= @user.weight %></h3>
   <h3>Your Calorie Allowance: <%= @user.cal_rem %> / <%= @user.calorie_allowance %></h3>
-  <h3>Total Calories Gained: <%= @total_cal_gained %></h3>
-  <h3>Total Calories Burned: <%= @total_cal_burned %></h3>
+  <h3>Total Calories Gained: <span id="cal-gained"><%= @total_cal_gained %></span></h3>
+  <h3>Total Calories Burned: <span id="cal-burned"><%= @total_cal_burned %></span></h3>
 
   <%= link_to "Log your Meal", new_user_meal_path(@user) %>
   <br>
   <%= link_to "Log your Workout", new_user_workout_path(@user) %>
+
+  <hr>
+  <br><br>
+  <p>Log a Meal, son</p>
+  <%= form_for [@user, @meal], remote: true do |f| %>
+    <%= f.label :servings %>
+    <%= f.number_field :servings %>
+    <%= f.select(:food_id, @foods.map { |value| [ value.name, value.id ] })%>
+    <%= f.submit %>
+  <% end %>
+
+  <p>Log a Workout, bro</p>
+  <%= form_for [@user, @workout], remote:true do |f| %>
+    <%= f.label :minutes %>
+    <%= f.number_field :minutes %>
+    <%= f.select(:exercise_id, @exercises.map { |value| [ value.description, value.id ] })%>
+    <%= f.submit %>
+  <% end %>
+
+<div class="last_workout"></div>
+<div class="last_meal"></div>
+
 <% else %>
   <h3>Please Log In</h3>
 <% end %>

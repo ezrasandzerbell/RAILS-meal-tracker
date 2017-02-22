@@ -1,8 +1,8 @@
 <%= form_for [@user, @workout] do |f| %>
-<%= f.label :minutes %>
-<%= f.number_field :minutes %>
-<%= f.select(:exercise_id, @exercises.map { |value| [ value.description, value.id ] })%>
-<%= f.submit %>
+  <%= f.label :minutes %>
+  <%= f.number_field :minutes %>
+  <%= f.select(:exercise_id, @exercises.map { |value| [ value.description, value.id ] })%>
+  <%= f.submit %>
 <% end %>
 
 <hr>
