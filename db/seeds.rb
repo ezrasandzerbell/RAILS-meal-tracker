@@ -23,3 +23,19 @@ food_list = [
 food_list.each do |food_item, amount|
   Food.create( name: food_item, cal_serving: amount )
 end
+
+exercise_list = [
+  ["Aerobics", 5],
+  ["Stretching", 5],
+  ["Calisthenics",	5],
+  ["Aerobics", 7],
+  ["Stairs", 7],
+  ["Teaching", 7],
+  ["Lifting", 7],
+  ["Bicycling", 9],
+  ["Rowing", 9]
+]
+
+exercise_list.each do |routine, calories|
+  Exercise.create(description: routine, cal_min: calories )
+end

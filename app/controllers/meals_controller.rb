@@ -15,6 +15,8 @@ class MealsController < ApplicationController
     @meal = @user.meals.new(meal_params)
     @meal.cal_gained = @meal.meal_calc
     if @meal.save
+      @user.cal_rem = @user.cal_rem - @meal.cal_gained
+      @user.save
       redirect_to user_meals_path
     else
       render :new

@@ -1,0 +1,5 @@
+<h1>Workouts You've Logged</h1>
+
+<% @workouts.each do |workout| %>
+  <p><%= workout.cal_burned %> over <%= workout.minutes %> minutes</p>
+<% end %>

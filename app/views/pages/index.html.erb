@@ -11,7 +11,7 @@
   <% end %>
 <% elsif @user && @user.calorie_allowance && @user.weight %>
   <h3>Your Weight: <%= @user.weight %></h3>
-  <h3>Your Calorie Allowance: <%= @user.calorie_allowance %></h3>
+  <h3>Your Calorie Allowance: <%= @user.cal_rem %> / <%= @user.calorie_allowance %></h3>
 
   <%= link_to "Log your Meal", new_user_meal_path(@user) %>
   <br>

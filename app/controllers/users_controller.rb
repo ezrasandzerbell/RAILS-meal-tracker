@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
+      @user.cal_rem = @user.calorie_allowance
+      @user.save
       flash[:notice] = "You updated your account"
       redirect_to root_path
     else
