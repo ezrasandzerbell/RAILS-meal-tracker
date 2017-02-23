@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem "chartkick"
-gem 'textacular', '~> 3.0'
+gem 'textacular'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -1,3 +1,4 @@
 $('.last_workout').append('<p><%= @workout.cal_burned %> calories burned over <%= @workout.minutes %> minutes</p>')
 
 $('#cal-burned').html('<%= @total_cal_burned %>');
+$('#cal-remaining').html('<%= @user.cal_rem %>');

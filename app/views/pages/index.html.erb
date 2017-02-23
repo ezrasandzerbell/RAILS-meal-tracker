@@ -11,7 +11,7 @@
   <% end %>
 <% elsif @user && @user.calorie_allowance && @user.weight %>
   <h3>Your Weight: <%= @user.weight %></h3>
-  <h3>Your Calorie Allowance: <%= @user.cal_rem %> / <%= @user.calorie_allowance %></h3>
+  <h3>Your Calorie Allowance: <span id="cal-remaining"><%= @user.cal_rem %></span> / <%= @user.calorie_allowance %></h3>
   <h3>Total Calories Gained: <span id="cal-gained"><%= @total_cal_gained %></span></h3>
   <h3>Total Calories Burned: <span id="cal-burned"><%= @total_cal_burned %></span></h3>
 
@@ -19,14 +19,16 @@
   <br>
   <%= link_to "Log your Workout", new_user_workout_path(@user) %>
 
-  <%= form_tag root_path, :method => 'get', :id => "meal_search" do %>
+
+
+  <%= form_tag root_path, :method => 'get', enforce_utf8: false do %>
     <p>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Search", :name => nil %>
     </p>
-    <div id="meal_s_results"><%= render 'meal_s_results' %></div>
   <% end %>
 
+  <div id="food_s_results"><%= render 'foods' %></div>
 
   <hr>
   <br><br>
