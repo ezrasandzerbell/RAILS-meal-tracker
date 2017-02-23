@@ -1,0 +1,1 @@
+  <%= pie_chart current_user.meals.group(:servings).sum(:cal_gained) %>
