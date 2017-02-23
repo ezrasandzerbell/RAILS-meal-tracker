@@ -21,7 +21,7 @@ class WorkoutsController < ApplicationController
       flash[:notice] = "Workout successfully added!"
       respond_to do |format|
         format.html { redirect_to root_path }
-        format.js
+        format.js { render layout: false }
       end
     else
       render :new
