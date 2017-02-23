@@ -11,7 +11,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
-gem "chartkick"
+gem 'chartkick', '~> 2.2.3'
 gem 'textacular'
 
 group :development, :test do
