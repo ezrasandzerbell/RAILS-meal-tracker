@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def index
     if params[:search]
-      @food_results = params[:search]==""? Food.all : Food.fuzzy_search(params[:search])
+      @food_results = params[:search]==""? Food.all : Food.fuzzy_search(params[:search]).order(:name).paginate(:page => params[:page])
       respond_to do |format|
         format.html { redirect_to root_path }
         format.js { render layout: false }

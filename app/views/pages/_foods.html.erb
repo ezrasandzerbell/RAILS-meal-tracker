@@ -5,3 +5,8 @@
   </p>
   <% end %>
 <% end %>
+
+<% if params[:search] %>
+
+  <%= will_paginate @food_results %>
+<% end %>

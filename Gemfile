@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'chartkick', '~> 2.2.3'
 gem 'textacular'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug', platform: :mri
