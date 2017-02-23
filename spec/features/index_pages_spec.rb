@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 describe 'meals path' do
-  it 'will add a meals', js: true do
+  it 'will add a meal', js: true do
     user = FactoryGirl.create(:user)
     food = FactoryGirl.create(:food)
-    meal = FactoryGirl.create(:meal)
     login_as(user)
     visit root_path
     fill_in 'Weight', :with => "250"
@@ -12,6 +11,6 @@ describe 'meals path' do
     click_on 'Update User'
     fill_in 'Servings', :with => 2
     click_on 'Create Meal'
-    expect(page).to have_content('Log your Meal')
+    expect(page).to have_content('200 calories')
   end
 end

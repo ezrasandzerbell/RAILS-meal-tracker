@@ -9,7 +9,7 @@ require 'capybara/rails'
 require 'launchy'
 require 'capybara/poltergeist'
 require 'support/factory_girl'
-require 'support/share_db_connection'
+require 'support/shared_db_connection'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
