@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     @workout = Workout.new
     @exercises = Exercise.all
     if current_user
-      @user = current_user      
+      @user = current_user
       @total_cal_gained = Meal.total_cal_gained(@user.id)
       @total_cal_burned = Workout.total_cal_burned(@user.id)
     end

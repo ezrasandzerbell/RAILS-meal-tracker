@@ -19,6 +19,15 @@
   <br>
   <%= link_to "Log your Workout", new_user_workout_path(@user) %>
 
+  <%= form_tag root_path, :method => 'get', :id => "meal_search" do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+    <div id="meal_s_results"><%= render 'meal_s_results' %></div>
+  <% end %>
+
+
   <hr>
   <br><br>
   <p>Log a Meal, son</p>
