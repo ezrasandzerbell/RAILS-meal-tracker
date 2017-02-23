@@ -2,3 +2,4 @@ $('.last_meal').append('<p><%= @meal.cal_gained %> calories gained over <%= @mea
 
 $('#cal-gained').html('<%= @total_cal_gained %>');
 $('#cal-remaining').html('<%= @user.cal_rem %>');
+$('#pieChartDiv').html("<%= j render('pages/pieChart') %>");
