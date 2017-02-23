@@ -28,6 +28,8 @@
     </p>
   <% end %>
 
+  <%= pie_chart Meal.group(:servings).sum(:cal_gained) %>
+
   <div id="food_s_results">
     <%= render 'foods' %>
   </div>
