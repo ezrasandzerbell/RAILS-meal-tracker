@@ -1,2 +1,7 @@
-<%= hidden_field_tag :direction, params[:direction] %>
-<%= hidden_field_tag :sort, params[:sort] %>
+<% if @food_results %>
+  <% @food_results.each do |food| %>
+  <p>
+    <%= food.name %>
+  </p>
+  <% end %>
+<% end %>

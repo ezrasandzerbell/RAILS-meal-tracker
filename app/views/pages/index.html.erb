@@ -21,14 +21,16 @@
 
 
 
-  <%= form_tag root_path, :method => 'get', enforce_utf8: false do %>
+  <%= form_tag root_path, :method => 'get', remote: true, id: 'food_search_form', :enforce_utf8 => false do %>
     <p>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Search", :name => nil %>
     </p>
   <% end %>
 
-  <div id="food_s_results"><%= render 'foods' %></div>
+  <div id="food_s_results">
+    <%= render 'foods' %>
+  </div>
 
   <hr>
   <br><br>

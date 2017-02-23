@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(function(){
+  $('#food_search_form input').keyup(function(){
+    $.get($('#food_search_form').attr("action"),$('#food_search_form').serialize(), null,'script');
+    console.log($('#food_search_form').serialize())
+    return false;
+  });
+});
